@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: MyString
+  x: 1.5
+  'y': 1.5
+  time: 2018-07-20 14:48:37
+  date: 2018-07-20
+
+two:
+  user: MyString
+  x: 1.5
+  'y': 1.5
+  time: 2018-07-20 14:48:37
+  date: 2018-07-20

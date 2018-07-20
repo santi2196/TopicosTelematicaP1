@@ -1,0 +1,16 @@
+<body>
+	<script>
+	function getlocation (){
+		if(navigator.geolocation){
+			navigator.geolocation.getCurrentPosition(getposition);
+		} else{
+			document.write("El geolocalizador no es soportado por el navigator");
+		} 
+	}
+	function getposition (position){
+		document.write("Latitud:" + position.coords.latitude + "<br>Longitud: " + position.coords.longitude);
+}
+	window.setInterval(getlocation,1000);
+
+	</script>
+</body>
