@@ -9,7 +9,7 @@ def store
 		latitude = params[:latitude]
 		longitude = params[:longitude]
 
-		@event = Event.new(user: 1, x: longitude, y: latitude)
+		@event = Event.new(user: current_usuario.id, x: longitude, y: latitude)
 
 		if @event.save then 
 

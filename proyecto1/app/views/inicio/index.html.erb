@@ -1,0 +1,14 @@
+<% if usuario_signed_in? %>
+
+<h3>you have succesfully signed in</h3>
+<%= link_to "Sign Out", destroy_usuario_session_path, :method => :delete %>
+<%= link_to "Siguiente", event_get_location_path, :method => :get %>
+
+
+<% else %>
+
+<h1> welcom to rails community</h1>
+<%= link_to "Sign In", new_usuario_session_path, :method => :get %>
+<%= link_to "Sign up", new_usuario_registration_path, :method => :get %>
+
+<% end %>
