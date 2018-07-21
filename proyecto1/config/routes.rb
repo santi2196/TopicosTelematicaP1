@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get 'event/get_location'
   get 'event/store'
   root :to => 'inicio#index'
+  get 'event/map'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

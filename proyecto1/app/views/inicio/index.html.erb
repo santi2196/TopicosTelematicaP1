@@ -3,6 +3,7 @@
 <h3>you have succesfully signed in</h3>
 <%= link_to "Sign Out", destroy_usuario_session_path, :method => :delete %>
 <%= link_to "Siguiente", event_get_location_path, :method => :get %>
+<%= link_to "Mapa", event_map_path, :method => :get %>
 
 
 <% else %>
