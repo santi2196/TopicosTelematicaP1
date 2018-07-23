@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'event/store'
   root :to => 'inicio#index'
   get 'event/map'
+  get 'event/date'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

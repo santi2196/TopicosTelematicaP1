@@ -26,17 +26,36 @@ def store
   end
 
 def map
-
+	@starting_date = params[:starting][:date_1]
+	@ending_date = params[:ending][:date_2]
 	@usuario_events = Event.where(user: current_usuario.id)
+	@result = Array.new
 
-	@usuario_events.each do |coords|
+	@usuario_events.each do |event|
 
-		@link = "https://www.google.es/maps/dir/" + "'" + coords.y.to_s + "," + coords.x.to_s + "'" + "/"
+		 if((event.created_at.to_time >= @starting_date.to_time) && 
+        (event.created_at.to_time <= @ending_date.to_time)) then
+
+        @result << event
+    	end
+    end
+
+
+	@link = "https://www.google.es/maps/dir/" 
+
+	@result.each do |coords|
+
+		 @link.concat("'" + coords.y.to_s + "," + coords.x.to_s + "'" + "/")
 
 	end
 	
 	redirect_to @link
 
 end
+
+def date
+
+end
+
 
 end
