@@ -13,7 +13,10 @@ def store
 
 		if @event.save then 
 
-			format.html{redirect_to event_get_location_path}
+			
+            url = request.original_url.sub("http", "https")
+            url = url.sub("store", "get_location")
+  		   	format.html{redirect_to url}
 
 		else
 

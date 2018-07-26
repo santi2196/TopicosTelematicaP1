@@ -12,10 +12,14 @@
 }
 
 	function storePosition(position){
-
-		window.open("store?latitude=" + position.coords.latitude + "&longitude=" + position.coords.longitude,"_self");
-
-	}
+        
+        var original_url = window.location.href;
+        var store_url = "store?latitude=" + position.coords.latitude +
+		"&longitude=" + position.coords.longitude;
+        var url = original_url.slice(0,original_url.indexOf("get_location")) + store_url;
+	window.open(url, "_self");
+  
+}
 	window.setInterval(getlocation,1000);
 
 	</script>
