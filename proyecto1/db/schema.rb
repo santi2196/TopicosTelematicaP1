@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_193939) do
+ActiveRecord::Schema.define(version: 2018_08_03_163044) do
 
   create_table "events", force: :cascade do |t|
     t.string "user"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2018_07_21_193939) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "token"
     t.index ["email"], name: "index_usuarios_on_email", unique: true
     t.index ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true
   end

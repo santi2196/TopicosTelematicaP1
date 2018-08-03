@@ -17,21 +17,9 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-    adapter:  postgresql
-    database: articulosem_test
-    user:     pguser
-    password: test123
-    host:     db
-    port:     5432
-    pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    timeout:  5000
+  <<:               *default
+  database:         db/test.sqlite3
 
 production:
-    adapter:  postgresql
-    database: articulosem
-    user:     pguser
-    password: test123
-    host:     db
-    port:     5432
-    pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    timeout:  5000
+  <<:               *default
+  database:         db/production.sqlite3
